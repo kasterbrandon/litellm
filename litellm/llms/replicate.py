@@ -334,7 +334,7 @@ def completion(
         # Calculate usage
         prompt_tokens = len(encoding.encode(prompt))
         completion_tokens = len(
-            encoding.encode(model_response["choices"][0]["message"].get("content", ""))
+            encoding.encode(result)
         )
         model_response["model"] = "replicate/" + model
         usage = Usage(
